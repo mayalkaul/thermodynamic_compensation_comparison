@@ -10,15 +10,15 @@ Prokaryotic thermodynamic compensation results in aatRNA/EF-Tu affinities signif
 
 eukaryotic aatRNAs do not show a pattern *based on the values of aa and T-arm basepair affinities* (p=0.35), and is significantly different from the prokaryotic values (p=8.2e-182)
 
-### NOT conclusions and other concerns with how I did this
+### Concerns and anti-conclusions
 This doesn't rule out thermodynamic compensation in a different way, especially since the eukaryotic tRNA-delivery system is EF1a, not EF-Tu. 
 
-This is based on Schrader and Uhlenbeck, 2018(doi:10.1016/j.cbpa.2018.07.016), with the values compared to phenylalanine. The data does not include threonine's value, and does not have values for several tRNA basepairs. 
+This is based on Uhlenbeck and Schrader, 2018 (doi:10.1016/j.cbpa.2018.07.016), with the values compared to phenylalanine. The data does not include threonine's value, and does not have values for several tRNA basepairs. 
 
 ### Data?
 The tRNA sequences are from GtRNAdb out of UCSC (Chan and Lowe, 2016 doi:10.1093/nar/gkv1309). I took all bacterial and all eukaryotic with a quality score above 56, which is "conservatively" predicted to be an active tRNA (Chan and Lowe, 2019 doi:10.1007/978-1-4939-9173-0_1). This led to ~150k eukaryotic tRNA sequences and 250k prokaryotic sequences. 
 
-The effect of the amino acid and "Uhlenbeck pairs" is relative to properly acylated Phe-tRNAPhe, and the values come from Schrader and Uhlenbeck, 2018 (doi:10.1016/j.cbpa.2018.07.016)
+The effect of the amino acid and "Uhlenbeck pairs" is relative to properly acylated Phe-tRNAPhe, and the values come from Uhlenbeck and Schrader, 2018 (doi:10.1016/j.cbpa.2018.07.016)
 
 ### Approach?
 ##### Identify the T-arm and compile sequences where identification succeeded. 
@@ -30,3 +30,13 @@ I tried doing this based on conserved bases (included as commented segment, for 
 matching the amino acid and the Uhlenbeck pairs to their values. This step also removes some weird tRNAs (initiator, suppressor), and unfortunately some tRNAs that contain Uhlenbeck pairs I do not have data for (~3k for Eukaryotes and ~4k for Prokaryotes)
 
 ##### Evaluate
+
+### Sources
+Chan, P. P., & Lowe, T. M. (2016). GtRNAdb 2.0: an expanded database of transfer RNA genes identified in complete and draft genomes. Nucleic acids research, 44(D1), D184–D189. https://doi.org/10.1093/nar/gkv1309
+
+Chan, P. P., & Lowe, T. M. (2019). tRNAscan-SE: Searching for tRNA Genes in Genomic Sequences. Methods in molecular biology (Clifton, N.J.), 1962, 1–14. https://doi.org/10.1007/978-1-4939-9173-0_1
+
+Schrader, J. M., & Uhlenbeck, O. C. (2011). Is the sequence-specific binding of aminoacyl-tRNAs by EF-Tu universal among bacteria?. Nucleic acids research, 39(22), 9746–9758. https://doi.org/10.1093/nar/gkr641
+
+Uhlenbeck, O. C., & Schrader, J. M. (2018). Evolutionary tuning impacts the design of bacterial tRNAs for the incorporation of unnatural amino acids by ribosomes. Current opinion in chemical biology, 46, 138–145. https://doi.org/10.1016/j.cbpa.2018.07.016
+
